@@ -1,17 +1,17 @@
-require('babel-register')();
+// require('babel-register')();
 
-var exposedProperties = ['window', 'navigator', 'document'];
+// var exposedProperties = ['window', 'navigator', 'document'];
 
-var jsdom = require('jsdom').jsdom;
+// var jsdom = require('jsdom').jsdom;
 
-global.document = jsdom('');
-global.window = document.defaultView;
-Object.keys(document.defaultView).forEach((property) => {
-  if (typeof global[property] === 'undefined') {
-    global[property] = document.defaultView[property];
-  }
-});
+// global.document = jsdom('');
+// global.window = document.defaultView;
+// Object.keys(document.defaultView).forEach((property) => {
+//   if (typeof global[property] === 'undefined') {
+//     global[property] = document.defaultView[property];
+//   }
+// });
 
-global.navigator = {
-  userAgent: 'node.js'
-};
+// global.navigator = {
+//   userAgent: 'node.js'
+// };
